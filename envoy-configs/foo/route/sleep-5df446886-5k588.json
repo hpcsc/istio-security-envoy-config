@@ -4584,6 +4584,104 @@
         "validateClusters": false
     },
     {
+        "name": "inbound|80|http|sleep.foo.svc.cluster.local",
+        "virtualHosts": [
+            {
+                "name": "inbound|http|80",
+                "domains": [
+                    "*"
+                ],
+                "routes": [
+                    {
+                        "name": "default",
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "inbound|80|http|sleep.foo.svc.cluster.local",
+                            "timeout": "0s",
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "decorator": {
+                            "operation": "sleep.foo.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "sleep.foo.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "sleep"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "foo"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://foo/services/sleep"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "validateClusters": false
+    },
+    {
+        "name": "inbound|80|http|sleep.foo.svc.cluster.local",
+        "virtualHosts": [
+            {
+                "name": "inbound|http|80",
+                "domains": [
+                    "*"
+                ],
+                "routes": [
+                    {
+                        "name": "default",
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "inbound|80|http|sleep.foo.svc.cluster.local",
+                            "timeout": "0s",
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "decorator": {
+                            "operation": "sleep.foo.svc.cluster.local:80/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "sleep.foo.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "sleep"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "foo"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://foo/services/sleep"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "validateClusters": false
+    },
+    {
         "virtualHosts": [
             {
                 "name": "backend",

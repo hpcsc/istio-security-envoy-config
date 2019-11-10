@@ -21,14 +21,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "111",
+                        "value": "134",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "111",
+                        "value": "134",
                         "name": "rq_total"
                     },
                     {
@@ -301,14 +301,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "10",
+                        "value": "12",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "10",
+                        "value": "12",
                         "name": "rq_total"
                     },
                     {
@@ -856,14 +856,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "10",
+                        "value": "11",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "10",
+                        "value": "11",
                         "name": "rq_total"
                     },
                     {
@@ -1774,21 +1774,21 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "12",
+                        "value": "14",
                         "name": "cx_total"
                     },
                     {
                         "name": "rq_error"
                     },
                     {
-                        "value": "12",
+                        "value": "14",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "12",
+                        "value": "14",
                         "name": "rq_total"
                     },
                     {
@@ -2052,10 +2052,11 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "1",
+                        "value": "2",
                         "name": "cx_total"
                     },
                     {
+                        "value": "1",
                         "name": "rq_error"
                     },
                     {
@@ -2065,7 +2066,7 @@
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "1",
+                        "value": "2",
                         "name": "rq_total"
                     },
                     {
@@ -2242,14 +2243,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "12",
+                        "value": "14",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "12",
+                        "value": "14",
                         "name": "rq_total"
                     },
                     {
