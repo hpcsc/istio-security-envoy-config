@@ -133,6 +133,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.3000_._.grafana.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -152,6 +185,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/bar/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.8000_._.httpbin.bar.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -171,6 +237,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/foo/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.8000_._.httpbin.foo.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -190,6 +289,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/legacy/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.8000_._.httpbin.legacy.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -210,8 +342,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-citadel-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.8060_._.istio-citadel.istio-system.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -231,6 +397,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-citadel-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15014_._.istio-citadel.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -251,8 +450,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-egressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.80_._.istio-egressgateway.istio-system.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -272,6 +505,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-egressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.istio-egressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -291,6 +557,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-egressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15443_._.istio-egressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -310,6 +609,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-galley-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.istio-galley.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -330,8 +662,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-galley-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.9901_._.istio-galley.istio-system.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -351,6 +717,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-galley-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15014_._.istio-galley.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -371,8 +770,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.80_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -392,6 +825,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -411,6 +877,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15020_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -430,6 +929,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15029_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -449,6 +981,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15030_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -468,6 +1033,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15031_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -487,6 +1085,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15032_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -506,6 +1137,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15443_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -525,6 +1189,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-ingressgateway-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.31400_._.istio-ingressgateway.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -544,6 +1241,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.8080_._.istio-pilot.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -564,8 +1294,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.15010_._.istio-pilot.istio-system.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -585,6 +1349,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15011_._.istio-pilot.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -604,6 +1401,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-pilot-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15014_._.istio-pilot.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -713,6 +1543,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-sidecar-injector-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.istio-sidecar-injector.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -732,6 +1595,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/istio-sidecar-injector-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.15014_._.istio-sidecar-injector.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -869,6 +1765,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.14267_._.jaeger-collector.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -888,6 +1817,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.14268_._.jaeger-collector.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -907,6 +1869,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.16686_._.jaeger-query.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -926,6 +1921,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/kiali-service-account"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.20001_._.kiali.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -945,6 +1973,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/kube-system/sa/coredns"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.53_._.kube-dns.kube-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -964,6 +2025,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/kube-system/sa/kube-proxy"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.kubernetes.default.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -983,6 +2077,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/kube-system/sa/metrics-server"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.metrics-server.kube-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1032,8 +2159,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/olm/sa/olm-operators-configmap-server"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.50051_._.olm-operators.olm.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1054,8 +2215,42 @@
                 }
             ]
         },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/olm/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio",
+                    "h2"
+                ]
+            },
+            "sni": "outbound_.50051_._.operatorhubio-catalog.olm.svc.cluster.local"
+        },
         "http2ProtocolOptions": {
             "maxConcurrentStreams": 1073741824
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1127,6 +2322,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/prometheus"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.9090_._.prometheus.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1393,6 +2621,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/bar/sa/sleep"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.80_._.sleep.bar.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1422,6 +2683,13 @@
             "thresholds": [
                 {}
             ]
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1441,6 +2709,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/foo/sa/sleep"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.80_._.sleep.foo.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1460,6 +2761,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/legacy/sa/sleep"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.80_._.sleep.legacy.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1479,6 +2813,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/kube-system/sa/tiller"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.44134_._.tiller-deploy.kube-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1498,6 +2865,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.80_._.tracing.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1517,6 +2917,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/olm/sa/packageserver"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.443_._.v1-packages-operators-coreos-com.olm.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     },
     {
@@ -1587,6 +3020,39 @@
                     "maxRetries": 1024
                 }
             ]
+        },
+        "tlsContext": {
+            "commonTlsContext": {
+                "tlsCertificates": [
+                    {
+                        "certificateChain": {
+                            "filename": "/etc/certs/cert-chain.pem"
+                        },
+                        "privateKey": {
+                            "filename": "/etc/certs/key.pem"
+                        }
+                    }
+                ],
+                "validationContext": {
+                    "trustedCa": {
+                        "filename": "/etc/certs/root-cert.pem"
+                    },
+                    "verifySubjectAltName": [
+                        "spiffe://cluster.local/ns/istio-system/sa/default"
+                    ]
+                },
+                "alpnProtocols": [
+                    "istio"
+                ]
+            },
+            "sni": "outbound_.9411_._.zipkin.istio-system.svc.cluster.local"
+        },
+        "metadata": {
+            "filterMetadata": {
+                "istio": {
+                    "config": "/apis/networking/v1alpha3/namespaces/istio-system/destination-rule/default"
+                }
+            }
         }
     }
 ]

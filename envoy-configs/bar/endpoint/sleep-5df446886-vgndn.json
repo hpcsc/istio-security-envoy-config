@@ -21,14 +21,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "134",
+                        "value": "156",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "134",
+                        "value": "156",
                         "name": "rq_total"
                     },
                     {
@@ -852,14 +852,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "11",
+                        "value": "15",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "11",
+                        "value": "15",
                         "name": "rq_total"
                     },
                     {
@@ -1126,21 +1126,18 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "2",
                         "name": "cx_total"
                     },
                     {
                         "name": "rq_error"
                     },
                     {
-                        "value": "2",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "2",
                         "name": "rq_total"
                     },
                     {
@@ -1221,22 +1218,21 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "4",
+                        "value": "1",
                         "name": "cx_total"
                     },
                     {
-                        "value": "1",
                         "name": "rq_error"
                     },
                     {
-                        "value": "6",
+                        "value": "1",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "7",
+                        "value": "1",
                         "name": "rq_total"
                     },
                     {
@@ -1594,22 +1590,21 @@
                         "name": "cx_connect_fail"
                     },
                     {
-                        "value": "3",
+                        "value": "1",
                         "name": "cx_total"
                     },
                     {
-                        "value": "1",
                         "name": "rq_error"
                     },
                     {
-                        "value": "6",
+                        "value": "1",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "7",
+                        "value": "1",
                         "name": "rq_total"
                     },
                     {
@@ -2065,14 +2060,14 @@
                         "name": "rq_error"
                     },
                     {
-                        "value": "16",
+                        "value": "20",
                         "name": "rq_success"
                     },
                     {
                         "name": "rq_timeout"
                     },
                     {
-                        "value": "16",
+                        "value": "20",
                         "name": "rq_total"
                     },
                     {

@@ -1,4 +1,4 @@
 sleep.foo to httpbin.foo: 200
-sleep.foo to httpbin.bar: 503
-sleep.bar to httpbin.foo: 503
-sleep.bar to httpbin.bar: 503
+sleep.foo to httpbin.bar: 200
+sleep.bar to httpbin.foo: 200
+sleep.bar to httpbin.bar: 200

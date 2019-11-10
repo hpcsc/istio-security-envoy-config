@@ -2833,94 +2833,6 @@
         "validateClusters": false
     },
     {
-        "name": "jaeger-collector.istio-system.svc.cluster.local:14268",
-        "virtualHosts": [
-            {
-                "name": "jaeger-collector.istio-system.svc.cluster.local:14268",
-                "domains": [
-                    "jaeger-collector.istio-system.svc.cluster.local",
-                    "jaeger-collector.istio-system.svc.cluster.local:14268",
-                    "jaeger-collector.istio-system",
-                    "jaeger-collector.istio-system:14268",
-                    "jaeger-collector.istio-system.svc.cluster",
-                    "jaeger-collector.istio-system.svc.cluster:14268",
-                    "jaeger-collector.istio-system.svc",
-                    "jaeger-collector.istio-system.svc:14268",
-                    "10.104.82.222",
-                    "10.104.82.222:14268"
-                ],
-                "routes": [
-                    {
-                        "name": "default",
-                        "match": {
-                            "prefix": "/"
-                        },
-                        "route": {
-                            "cluster": "outbound|14268||jaeger-collector.istio-system.svc.cluster.local",
-                            "timeout": "0s",
-                            "retryPolicy": {
-                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
-                                "numRetries": 2,
-                                "retryHostPredicate": [
-                                    {
-                                        "name": "envoy.retry_host_predicates.previous_hosts"
-                                    }
-                                ],
-                                "hostSelectionRetryMaxAttempts": "5",
-                                "retriableStatusCodes": [
-                                    503
-                                ]
-                            },
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "jaeger-collector.istio-system.svc.cluster.local:14268/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "disableCheckCalls": true,
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "jaeger-collector.istio-system.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "jaeger-collector"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "istio-system"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://istio-system/services/jaeger-collector"
-                                        }
-                                    }
-                                },
-                                "forwardAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "jaeger-collector.istio-system.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "jaeger-collector"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "istio-system"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://istio-system/services/jaeger-collector"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
-        ],
-        "validateClusters": false
-    },
-    {
         "name": "istio-ingressgateway.istio-system.svc.cluster.local:15020",
         "virtualHosts": [
             {
@@ -3009,26 +2921,6 @@
         "validateClusters": false
     },
     {
-        "virtualHosts": [
-            {
-                "name": "backend",
-                "domains": [
-                    "*"
-                ],
-                "routes": [
-                    {
-                        "match": {
-                            "prefix": "/stats/prometheus"
-                        },
-                        "route": {
-                            "cluster": "prometheus_stats"
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "inbound|8000|http|httpbin.foo.svc.cluster.local",
         "virtualHosts": [
             {
@@ -3066,6 +2958,182 @@
                                         },
                                         "destination.service.uid": {
                                             "stringValue": "istio://foo/services/httpbin"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "validateClusters": false
+    },
+    {
+        "name": "tiller-deploy.kube-system.svc.cluster.local:44134",
+        "virtualHosts": [
+            {
+                "name": "tiller-deploy.kube-system.svc.cluster.local:44134",
+                "domains": [
+                    "tiller-deploy.kube-system.svc.cluster.local",
+                    "tiller-deploy.kube-system.svc.cluster.local:44134",
+                    "tiller-deploy.kube-system",
+                    "tiller-deploy.kube-system:44134",
+                    "tiller-deploy.kube-system.svc.cluster",
+                    "tiller-deploy.kube-system.svc.cluster:44134",
+                    "tiller-deploy.kube-system.svc",
+                    "tiller-deploy.kube-system.svc:44134",
+                    "10.97.162.135",
+                    "10.97.162.135:44134"
+                ],
+                "routes": [
+                    {
+                        "name": "default",
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "decorator": {
+                            "operation": "tiller-deploy.kube-system.svc.cluster.local:44134/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "tiller-deploy.kube-system.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "tiller-deploy"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "kube-system"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://kube-system/services/tiller-deploy"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "tiller-deploy.kube-system.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "tiller-deploy"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "kube-system"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://kube-system/services/tiller-deploy"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "validateClusters": false
+    },
+    {
+        "name": "jaeger-query.istio-system.svc.cluster.local:16686",
+        "virtualHosts": [
+            {
+                "name": "jaeger-query.istio-system.svc.cluster.local:16686",
+                "domains": [
+                    "jaeger-query.istio-system.svc.cluster.local",
+                    "jaeger-query.istio-system.svc.cluster.local:16686",
+                    "jaeger-query.istio-system",
+                    "jaeger-query.istio-system:16686",
+                    "jaeger-query.istio-system.svc.cluster",
+                    "jaeger-query.istio-system.svc.cluster:16686",
+                    "jaeger-query.istio-system.svc",
+                    "jaeger-query.istio-system.svc:16686",
+                    "10.103.252.159",
+                    "10.103.252.159:16686"
+                ],
+                "routes": [
+                    {
+                        "name": "default",
+                        "match": {
+                            "prefix": "/"
+                        },
+                        "route": {
+                            "cluster": "outbound|16686||jaeger-query.istio-system.svc.cluster.local",
+                            "timeout": "0s",
+                            "retryPolicy": {
+                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
+                                "numRetries": 2,
+                                "retryHostPredicate": [
+                                    {
+                                        "name": "envoy.retry_host_predicates.previous_hosts"
+                                    }
+                                ],
+                                "hostSelectionRetryMaxAttempts": "5",
+                                "retriableStatusCodes": [
+                                    503
+                                ]
+                            },
+                            "maxGrpcTimeout": "0s"
+                        },
+                        "decorator": {
+                            "operation": "jaeger-query.istio-system.svc.cluster.local:16686/*"
+                        },
+                        "typedPerFilterConfig": {
+                            "mixer": {
+                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
+                                "disableCheckCalls": true,
+                                "mixerAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "jaeger-query.istio-system.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "jaeger-query"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "istio-system"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://istio-system/services/jaeger-query"
+                                        }
+                                    }
+                                },
+                                "forwardAttributes": {
+                                    "attributes": {
+                                        "destination.service.host": {
+                                            "stringValue": "jaeger-query.istio-system.svc.cluster.local"
+                                        },
+                                        "destination.service.name": {
+                                            "stringValue": "jaeger-query"
+                                        },
+                                        "destination.service.namespace": {
+                                            "stringValue": "istio-system"
+                                        },
+                                        "destination.service.uid": {
+                                            "stringValue": "istio://istio-system/services/jaeger-query"
                                         }
                                     }
                                 }
@@ -3254,143 +3322,6 @@
         "validateClusters": false
     },
     {
-        "name": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-        "virtualHosts": [
-            {
-                "name": "inbound|http|8000",
-                "domains": [
-                    "*"
-                ],
-                "routes": [
-                    {
-                        "name": "default",
-                        "match": {
-                            "prefix": "/"
-                        },
-                        "route": {
-                            "cluster": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-                            "timeout": "0s",
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "httpbin.foo.svc.cluster.local:8000/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "httpbin.foo.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "httpbin"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "foo"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://foo/services/httpbin"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
-        ],
-        "validateClusters": false
-    },
-    {
-        "name": "tiller-deploy.kube-system.svc.cluster.local:44134",
-        "virtualHosts": [
-            {
-                "name": "tiller-deploy.kube-system.svc.cluster.local:44134",
-                "domains": [
-                    "tiller-deploy.kube-system.svc.cluster.local",
-                    "tiller-deploy.kube-system.svc.cluster.local:44134",
-                    "tiller-deploy.kube-system",
-                    "tiller-deploy.kube-system:44134",
-                    "tiller-deploy.kube-system.svc.cluster",
-                    "tiller-deploy.kube-system.svc.cluster:44134",
-                    "tiller-deploy.kube-system.svc",
-                    "tiller-deploy.kube-system.svc:44134",
-                    "10.97.162.135",
-                    "10.97.162.135:44134"
-                ],
-                "routes": [
-                    {
-                        "name": "default",
-                        "match": {
-                            "prefix": "/"
-                        },
-                        "route": {
-                            "cluster": "outbound|44134||tiller-deploy.kube-system.svc.cluster.local",
-                            "timeout": "0s",
-                            "retryPolicy": {
-                                "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
-                                "numRetries": 2,
-                                "retryHostPredicate": [
-                                    {
-                                        "name": "envoy.retry_host_predicates.previous_hosts"
-                                    }
-                                ],
-                                "hostSelectionRetryMaxAttempts": "5",
-                                "retriableStatusCodes": [
-                                    503
-                                ]
-                            },
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "tiller-deploy.kube-system.svc.cluster.local:44134/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "disableCheckCalls": true,
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "tiller-deploy.kube-system.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "tiller-deploy"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "kube-system"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://kube-system/services/tiller-deploy"
-                                        }
-                                    }
-                                },
-                                "forwardAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "tiller-deploy.kube-system.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "tiller-deploy"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "kube-system"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://kube-system/services/tiller-deploy"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
-        ],
-        "validateClusters": false
-    },
-    {
         "name": "jaeger-collector.istio-system.svc.cluster.local:14267",
         "virtualHosts": [
             {
@@ -3479,21 +3410,21 @@
         "validateClusters": false
     },
     {
-        "name": "jaeger-query.istio-system.svc.cluster.local:16686",
+        "name": "jaeger-collector.istio-system.svc.cluster.local:14268",
         "virtualHosts": [
             {
-                "name": "jaeger-query.istio-system.svc.cluster.local:16686",
+                "name": "jaeger-collector.istio-system.svc.cluster.local:14268",
                 "domains": [
-                    "jaeger-query.istio-system.svc.cluster.local",
-                    "jaeger-query.istio-system.svc.cluster.local:16686",
-                    "jaeger-query.istio-system",
-                    "jaeger-query.istio-system:16686",
-                    "jaeger-query.istio-system.svc.cluster",
-                    "jaeger-query.istio-system.svc.cluster:16686",
-                    "jaeger-query.istio-system.svc",
-                    "jaeger-query.istio-system.svc:16686",
-                    "10.103.252.159",
-                    "10.103.252.159:16686"
+                    "jaeger-collector.istio-system.svc.cluster.local",
+                    "jaeger-collector.istio-system.svc.cluster.local:14268",
+                    "jaeger-collector.istio-system",
+                    "jaeger-collector.istio-system:14268",
+                    "jaeger-collector.istio-system.svc.cluster",
+                    "jaeger-collector.istio-system.svc.cluster:14268",
+                    "jaeger-collector.istio-system.svc",
+                    "jaeger-collector.istio-system.svc:14268",
+                    "10.104.82.222",
+                    "10.104.82.222:14268"
                 ],
                 "routes": [
                     {
@@ -3502,7 +3433,7 @@
                             "prefix": "/"
                         },
                         "route": {
-                            "cluster": "outbound|16686||jaeger-query.istio-system.svc.cluster.local",
+                            "cluster": "outbound|14268||jaeger-collector.istio-system.svc.cluster.local",
                             "timeout": "0s",
                             "retryPolicy": {
                                 "retryOn": "connect-failure,refused-stream,unavailable,cancelled,resource-exhausted,retriable-status-codes",
@@ -3520,7 +3451,7 @@
                             "maxGrpcTimeout": "0s"
                         },
                         "decorator": {
-                            "operation": "jaeger-query.istio-system.svc.cluster.local:16686/*"
+                            "operation": "jaeger-collector.istio-system.svc.cluster.local:14268/*"
                         },
                         "typedPerFilterConfig": {
                             "mixer": {
@@ -3529,32 +3460,32 @@
                                 "mixerAttributes": {
                                     "attributes": {
                                         "destination.service.host": {
-                                            "stringValue": "jaeger-query.istio-system.svc.cluster.local"
+                                            "stringValue": "jaeger-collector.istio-system.svc.cluster.local"
                                         },
                                         "destination.service.name": {
-                                            "stringValue": "jaeger-query"
+                                            "stringValue": "jaeger-collector"
                                         },
                                         "destination.service.namespace": {
                                             "stringValue": "istio-system"
                                         },
                                         "destination.service.uid": {
-                                            "stringValue": "istio://istio-system/services/jaeger-query"
+                                            "stringValue": "istio://istio-system/services/jaeger-collector"
                                         }
                                     }
                                 },
                                 "forwardAttributes": {
                                     "attributes": {
                                         "destination.service.host": {
-                                            "stringValue": "jaeger-query.istio-system.svc.cluster.local"
+                                            "stringValue": "jaeger-collector.istio-system.svc.cluster.local"
                                         },
                                         "destination.service.name": {
-                                            "stringValue": "jaeger-query"
+                                            "stringValue": "jaeger-collector"
                                         },
                                         "destination.service.namespace": {
                                             "stringValue": "istio-system"
                                         },
                                         "destination.service.uid": {
-                                            "stringValue": "istio://istio-system/services/jaeger-query"
+                                            "stringValue": "istio://istio-system/services/jaeger-collector"
                                         }
                                     }
                                 }
@@ -3567,151 +3498,24 @@
         "validateClusters": false
     },
     {
-        "name": "inbound|8000|http|httpbin.foo.svc.cluster.local",
         "virtualHosts": [
             {
-                "name": "inbound|http|8000",
+                "name": "backend",
                 "domains": [
                     "*"
                 ],
                 "routes": [
                     {
-                        "name": "default",
                         "match": {
-                            "prefix": "/"
+                            "prefix": "/stats/prometheus"
                         },
                         "route": {
-                            "cluster": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-                            "timeout": "0s",
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "httpbin.foo.svc.cluster.local:8000/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "httpbin.foo.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "httpbin"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "foo"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://foo/services/httpbin"
-                                        }
-                                    }
-                                }
-                            }
+                            "cluster": "prometheus_stats"
                         }
                     }
                 ]
             }
-        ],
-        "validateClusters": false
-    },
-    {
-        "name": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-        "virtualHosts": [
-            {
-                "name": "inbound|http|8000",
-                "domains": [
-                    "*"
-                ],
-                "routes": [
-                    {
-                        "name": "default",
-                        "match": {
-                            "prefix": "/"
-                        },
-                        "route": {
-                            "cluster": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-                            "timeout": "0s",
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "httpbin.foo.svc.cluster.local:8000/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "httpbin.foo.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "httpbin"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "foo"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://foo/services/httpbin"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
-        ],
-        "validateClusters": false
-    },
-    {
-        "name": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-        "virtualHosts": [
-            {
-                "name": "inbound|http|8000",
-                "domains": [
-                    "*"
-                ],
-                "routes": [
-                    {
-                        "name": "default",
-                        "match": {
-                            "prefix": "/"
-                        },
-                        "route": {
-                            "cluster": "inbound|8000|http|httpbin.foo.svc.cluster.local",
-                            "timeout": "0s",
-                            "maxGrpcTimeout": "0s"
-                        },
-                        "decorator": {
-                            "operation": "httpbin.foo.svc.cluster.local:8000/*"
-                        },
-                        "typedPerFilterConfig": {
-                            "mixer": {
-                                "@type": "type.googleapis.com/istio.mixer.v1.config.client.ServiceConfig",
-                                "mixerAttributes": {
-                                    "attributes": {
-                                        "destination.service.host": {
-                                            "stringValue": "httpbin.foo.svc.cluster.local"
-                                        },
-                                        "destination.service.name": {
-                                            "stringValue": "httpbin"
-                                        },
-                                        "destination.service.namespace": {
-                                            "stringValue": "foo"
-                                        },
-                                        "destination.service.uid": {
-                                            "stringValue": "istio://foo/services/httpbin"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ]
-            }
-        ],
-        "validateClusters": false
+        ]
     },
     {
         "name": "15010",
